@@ -1,0 +1,45 @@
+{
+  "name": "tfs-onprem-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Azure DevOps Server / TFS on-prem via NTLM-authenticated REST APIs.",
+  "type": "module",
+  "author": "Sun Hongbing",
+  "homepage": "https://github.com/cybercdc/tfs-onprem-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/cybercdc/tfs-onprem-mcp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cybercdc/tfs-onprem-mcp.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "tfs-onprem-mcp": "./src/index.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node --check src/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "tfs",
+    "azure-devops-server",
+    "azure-devops"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "zod": "^3.25.76"
+  }
+}
