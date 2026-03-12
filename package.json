@@ -1,5 +1,5 @@
 {
-  "name": "tfs-onprem-mcp",
+  "name": "@cybercdc/tfs-onprem-mcp",
   "version": "0.1.0",
   "description": "MCP server for Azure DevOps Server / TFS on-prem via NTLM-authenticated REST APIs.",
   "type": "module",

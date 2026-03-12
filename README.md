@@ -116,7 +116,7 @@ If you publish this package to npm, you can switch to:
   "mcpServers": {
     "tfs-onprem": {
       "command": "npx",
-      "args": ["-y", "tfs-onprem-mcp"],
+      "args": ["-y", "@cybercdc/tfs-onprem-mcp"],
       "env": {
         "AZURE_DEVOPS_ORG_URL": "http://your-tfs-host",
         "AZURE_DEVOPS_COLLECTION": "DefaultCollection",
@@ -167,7 +167,7 @@ If your server uses different custom field reference names, prefer `create_work_
 
 ## Publish
 
-1. Update `name` in `package.json` to an available npm package name.
+1. Confirm the scoped package name in `package.json` is correct for your npm account or org.
 2. Update the GitHub URLs in `package.json` if your repository owner or organization differs.
 3. Bump `version`.
 4. Log in:
