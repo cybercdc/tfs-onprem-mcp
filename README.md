@@ -33,6 +33,12 @@ This server uses the official MCP TypeScript SDK over `stdio` and shells out to 
 npm install
 ```
 
+Package tarball:
+
+```bash
+npm pack
+```
+
 ## Environment Variables
 
 Required:
@@ -56,6 +62,29 @@ export AZURE_DEVOPS_API_VERSION="5.1"
 ```bash
 npm start
 ```
+
+## Run With Docker
+
+Build the image:
+
+```bash
+docker build -t tfs-onprem-mcp .
+```
+
+Run it with your TFS connection settings:
+
+```bash
+docker run --rm -i \
+  -e AZURE_DEVOPS_ORG_URL="http://your-tfs-host" \
+  -e AZURE_DEVOPS_COLLECTION="DefaultCollection" \
+  -e AZURE_DEVOPS_USERNAME="domain_user" \
+  -e AZURE_DEVOPS_PASSWORD="your-password" \
+  -e AZURE_DEVOPS_PROJECT="体检新产品" \
+  -e AZURE_DEVOPS_API_VERSION="5.1" \
+  tfs-onprem-mcp
+```
+
+If your MCP client supports Docker-based stdio servers, point it at the image and pass the same environment variables there.
 
 ## MCP Client Config
 
@@ -152,6 +181,22 @@ npm login
 ```bash
 npm publish --access public
 ```
+
+## GitHub Release Checklist
+
+1. Push the current version tag:
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+2. Create a GitHub release from that tag.
+3. Attach the `npm pack` tarball if you want a downloadable artifact on the release page.
+4. Use release notes that mention:
+   - NTLM-authenticated TFS / Azure DevOps Server support
+   - validated REST API version `5.1`
+   - generic work item creation plus backlog convenience wrapper
 
 ## Sources
 
